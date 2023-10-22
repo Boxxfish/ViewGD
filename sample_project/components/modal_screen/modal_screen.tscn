@@ -1,0 +1,93 @@
+[gd_scene load_steps=4 format=3 uid="uid://gvi3ngsc8pqm"]
+
+[ext_resource type="Script" path="res://components/modal_screen/modal_screen.gd" id="1_mnuul"]
+[ext_resource type="Texture2D" uid="uid://bgpcavpyte0m2" path="res://party_member_icon.svg" id="1_pny58"]
+[ext_resource type="PackedScene" uid="uid://dy7iswcgcv04d" path="res://components/stat_mod/stat_mod.tscn" id="2_ffkep"]
+
+[node name="ModalScreen" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 0.345098)
+script = ExtResource("1_mnuul")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Modal" type="PanelContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Modal"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ModalVBox" type="VBoxContainer" parent="CenterContainer/Modal/MarginContainer"]
+layout_mode = 2
+
+[node name="ModalTitle" type="Label" parent="CenterContainer/Modal/MarginContainer/ModalVBox"]
+layout_mode = 2
+text = "Edit Party Member"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Modal/MarginContainer/ModalVBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="DataVBox" type="VBoxContainer" parent="CenterContainer/Modal/MarginContainer/ModalVBox/MarginContainer"]
+layout_mode = 2
+
+[node name="MemberIcon" type="TextureRect" parent="CenterContainer/Modal/MarginContainer/ModalVBox/MarginContainer/DataVBox"]
+layout_mode = 2
+texture = ExtResource("1_pny58")
+expand_mode = 5
+
+[node name="PointsLeftLabel" type="Label" parent="CenterContainer/Modal/MarginContainer/ModalVBox/MarginContainer/DataVBox"]
+layout_mode = 2
+text = "Points Left: 0"
+horizontal_alignment = 1
+
+[node name="StrenMod" parent="CenterContainer/Modal/MarginContainer/ModalVBox/MarginContainer/DataVBox" instance=ExtResource("2_ffkep")]
+layout_mode = 2
+
+[node name="DexMod" parent="CenterContainer/Modal/MarginContainer/ModalVBox/MarginContainer/DataVBox" instance=ExtResource("2_ffkep")]
+layout_mode = 2
+
+[node name="ConMod" parent="CenterContainer/Modal/MarginContainer/ModalVBox/MarginContainer/DataVBox" instance=ExtResource("2_ffkep")]
+layout_mode = 2
+
+[node name="WisMod" parent="CenterContainer/Modal/MarginContainer/ModalVBox/MarginContainer/DataVBox" instance=ExtResource("2_ffkep")]
+layout_mode = 2
+
+[node name="IntelMod" parent="CenterContainer/Modal/MarginContainer/ModalVBox/MarginContainer/DataVBox" instance=ExtResource("2_ffkep")]
+layout_mode = 2
+
+[node name="ChaMod" parent="CenterContainer/Modal/MarginContainer/ModalVBox/MarginContainer/DataVBox" instance=ExtResource("2_ffkep")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/Modal/MarginContainer/ModalVBox/MarginContainer/DataVBox"]
+layout_mode = 2
+
+[node name="ApplyButton" type="Button" parent="CenterContainer/Modal/MarginContainer/ModalVBox/MarginContainer/DataVBox/HBoxContainer"]
+layout_mode = 2
+text = "Apply"
+
+[node name="Spacing" type="Control" parent="CenterContainer/Modal/MarginContainer/ModalVBox/MarginContainer/DataVBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DiscardButton" type="Button" parent="CenterContainer/Modal/MarginContainer/ModalVBox/MarginContainer/DataVBox/HBoxContainer"]
+layout_mode = 2
+text = "Discard"

@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy7iswcgcv04d"]
+
+[ext_resource type="PackedScene" uid="uid://cffphsfjqa81r" path="res://components/spinbox/spinbox.tscn" id="1_fqj4p"]
+[ext_resource type="Script" path="res://components/stat_mod/stat_mod.gd" id="1_t16nf"]
+
+[node name="StatMod" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -933.0
+offset_bottom = -608.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+script = ExtResource("1_t16nf")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="StatName" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Str"
+
+[node name="Spacing" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Spinbox" parent="HBoxContainer" instance=ExtResource("1_fqj4p")]
+layout_mode = 2

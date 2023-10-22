@@ -1,0 +1,80 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxntvaxes5vab"]
+
+[ext_resource type="Script" path="res://components/party_editor/party_editor.gd" id="1_vh402"]
+[ext_resource type="PackedScene" uid="uid://gvi3ngsc8pqm" path="res://components/modal_screen/modal_screen.tscn" id="2_sg4fb"]
+
+[node name="PartyEditor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vh402")
+
+[node name="MainVBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopPanel" type="PanelContainer" parent="MainVBox"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MainVBox/TopPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="TopHBox" type="HBoxContainer" parent="MainVBox/TopPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="PartyEditorTitle" type="Label" parent="MainVBox/TopPanel/MarginContainer/TopHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Party Editor"
+
+[node name="AddButton" type="Button" parent="MainVBox/TopPanel/MarginContainer/TopHBox"]
+layout_mode = 2
+text = "Add"
+
+[node name="ExploreButton" type="Button" parent="MainVBox/TopPanel/MarginContainer/TopHBox"]
+layout_mode = 2
+text = "Explore!"
+
+[node name="PartyMembersScroll" type="ScrollContainer" parent="MainVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="MainVBox/PartyMembersScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MainVBox/PartyMembersScroll/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+
+[node name="PartyMembersFlow" type="HFlowContainer" parent="MainVBox/PartyMembersScroll/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 32
+theme_override_constants/v_separation = 32
+
+[node name="ModalContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ModalScreen" parent="ModalContainer" instance=ExtResource("2_sg4fb")]
+layout_mode = 2

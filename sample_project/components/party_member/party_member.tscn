@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://sf4k6b45s7tg"]
+
+[ext_resource type="Script" path="res://components/party_member/party_member.gd" id="1_4i6wk"]
+[ext_resource type="Texture2D" uid="uid://mf08qj3c52bc" path="res://icon.svg" id="1_535p8"]
+
+[node name="PartyMember" type="PanelContainer"]
+script = ExtResource("1_4i6wk")
+
+[node name="PartyMemberVBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="PartyMemberIcon" type="TextureRect" parent="PartyMemberVBox"]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+texture = ExtResource("1_535p8")
+
+[node name="ButtonsVBox" type="VBoxContainer" parent="PartyMemberVBox/PartyMemberIcon"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -67.0
+offset_top = 7.0
+offset_right = -8.0
+offset_bottom = 73.0
+grow_horizontal = 0
+
+[node name="DeleteButton" type="Button" parent="PartyMemberVBox/PartyMemberIcon/ButtonsVBox"]
+layout_mode = 2
+text = "Delete"
+
+[node name="EditButton" type="Button" parent="PartyMemberVBox/PartyMemberIcon/ButtonsVBox"]
+layout_mode = 2
+text = "Edit"
+
+[node name="MarginContainer" type="MarginContainer" parent="PartyMemberVBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PartyMemberVBox/MarginContainer"]
+layout_mode = 2
+
+[node name="PartyMemberName" type="Label" parent="PartyMemberVBox/MarginContainer/VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="StatsLabel" type="Label" parent="PartyMemberVBox/MarginContainer/VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
