@@ -7,7 +7,7 @@ ViewGD is a single-file library for Godot that lets you create reactive UI compo
 The philosophy of this library is to augment Godot's UI capabilities, not replace it. Thanks to the engine's hierarchical node system, signals, lambdas, and `$nodepath` syntax, all the pieces are already there. The only pain point is managing internal component state, which is where this comes in. If you haven't used a reactive UI framework before, [this is a good primer](https://vuejs.org/guide/extras/reactivity-in-depth.html)!
 
 ## Installation
-All you need to do to use this library is either clone or download this repo, then copy `ViewGD.gd` into your project. Doesn't matter which folder you put it in, it'll still work. Optionally, you can copy the [script_templates](https://docs.godotengine.org/en/stable/tutorials/scripting/creating_script_templates.html) folder to cut down on boilerplate. Whenever you want to create a new UI component, create a new `Control` node and select the `UI` template!
+All you need to do to use this library is either clone or download this repo, then copy `view_gd.gd` into your project. Doesn't matter which folder you put it in, it'll still work. Optionally, you can copy the [script_templates](https://docs.godotengine.org/en/stable/tutorials/scripting/creating_script_templates.html) folder to cut down on boilerplate. Whenever you want to create a new UI component, create a new `Control` node and select the `UI` template!
 
 ## Tutorial
 At its core, ViewGD is just a reactive state manager. You declare some data, bind it to node properties, and those properties will update automatically whenever the data changes. Create a Button node, and add a new script to it, using the default Godot template. Add this boilerplate at the top of the script:

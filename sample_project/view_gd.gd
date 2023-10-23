@@ -70,7 +70,16 @@ func get_v(property: String):
 ## Binds a component's property to a tracked ref.
 ## If an update signal is passed, this becomes a two way binding. The tracked ref can be modified
 ## by both ViewGD and the component, updating whenever the signal fires.
-func bind(_component: Node, property_name: String, value_name: String, update_signal: String = ""):
+## `tracked_ref` can either be a string indicating the name of the reactive value or a function.
+func bind(_component: Node, property_name: String, tracked_ref, update_signal: String = ""):
+	var value_name
+	if typeof(tracked_ref) == TYPE_CALLABLE:
+		# If a function has been passed, create a new computed function.
+		value_name = get_unique_id()
+		self.computed(value_name, tracked_ref)
+	else:
+		value_name = tracked_ref
+	
 	var dep := Dep.new(_component, property_name)
 	self.refs[value_name].deps.append(dep)
 	_component.set(property_name, self.refs[value_name].value)
