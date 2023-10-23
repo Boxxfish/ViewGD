@@ -22,15 +22,18 @@ func props() -> Dictionary:
 func _ready():
 	vw.begin()
 	
+	# Central textbox.
 	vw.watch(["number"], func(): emit_signal("number_changed", self.number))
 	vw.bind($Number, "text", "number", "text_changed")
 	vw.computed("not_text_edit_disabled", func(): return not self.text_edit_disabled)
 	vw.bind($Number, "editable", "not_text_edit_disabled")
 
+	# Minus button; disabled when number is less than `min`.
 	vw.computed("minus_disabled", func(): return self.number <= self.min)
 	vw.bind($Minus, "disabled", "minus_disabled")
 	$Minus.connect("pressed", func(): self.number -= 1)
 	
+	# Plus button; disabled when number is more than `max`.
 	vw.computed("plus_disabled", func(): return self.number >= self.max)
 	vw.bind($Plus, "disabled", "plus_disabled")
 	$Plus.connect("pressed", func(): self.number += 1)

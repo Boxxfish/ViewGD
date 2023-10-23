@@ -1,4 +1,7 @@
 # ViewGD
+
+![example](example.gif)
+
 ViewGD is a single-file library for Godot that lets you create reactive UI components declaratively. It's based on [Vue.js](https://vuejs.org/), so if you've used it before, you should feel right at home!
 
 The philosophy of this library is to augment Godot's UI capabilities, not replace it. Thanks to the engine's hierarchical node system, signals, lambdas, and `$nodepath` syntax, all the pieces are already there. The only pain point is managing internal component state, which is where this comes in. If you haven't used a reactive UI framework before, [this is a good primer](https://vuejs.org/guide/extras/reactivity-in-depth.html)!
