@@ -1,3 +1,5 @@
+**Disclaimer: The code here will not work with the current version of Godot (4.4.1) due to the way setters and getters now work, and I am not actively maintaining this repo. There are more up to date projects such as [Rdot](https://github.com/Nitwel/Rdot) you should look at instead if you want to actually use this in a game. That being said, if you're just interested in how I implemented reactivity here, feel free to continue browsing.**
+
 # ViewGD
 
 ![example](example.gif)
